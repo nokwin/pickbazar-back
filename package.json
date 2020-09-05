@@ -21,7 +21,7 @@
     "strapi-plugin-documentation": "3.1.3",
     "strapi-plugin-email": "3.1.3",
     "strapi-plugin-upload": "3.1.3",
-    "strapi-plugin-users-permissions": "3.1.3",
+    "strapi-plugin-users-permissions": "git+https://dbatarin:SsGukesJrws8NHimj4sg@git.computools.org/pickbazar/strapi-plugin-users-permissions.git",
     "strapi-utils": "3.1.3"
   },
   "author": {

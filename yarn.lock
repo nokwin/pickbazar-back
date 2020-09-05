@@ -4313,17 +4313,9 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-grant-koa@^5.0.1:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/grant-koa/-/grant-koa-5.3.0.tgz#50cf193bd1f24ab1940c981d19fdabdcfa336afa"
-  integrity sha512-xiQyUBN+SjXTuPZLbEwU4u9hvXks8+f+wPhSUYCGkHCiQZZvfao52oYpzbY53xkVd9P1MPmBdvnayC852BKDsQ==
-  dependencies:
-    grant "5.3.0"
-
-grant@5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/grant/-/grant-5.3.0.tgz#625759c0e30d6fe827c7c90c328f9d0b53711272"
-  integrity sha512-beZI6F93qzv+bejv4/WLwrfjK3RoAR0ngK3CI1ZmvDiGfL9d6ttS2hGJAE3cjmTtxZGFLSoM9cCYf/Ys532U2A==
+"grant@git+https://dbatarin:SsGukesJrws8NHimj4sg@git.computools.org/pickbazar/grant.git":
+  version "5.4.0"
+  resolved "git+https://dbatarin:SsGukesJrws8NHimj4sg@git.computools.org/pickbazar/grant.git#c8e8a88444e00821b72519f89a51945517927ab7"
   dependencies:
     qs "^6.9.4"
     request-compose "^2.1.0"
@@ -7667,7 +7659,7 @@ react-with-styles@^4.1.0:
     prop-types "^15.7.2"
     react-with-direction "^1.3.1"
 
-react@^16.9.0:
+react@^16.13.1, react@^16.9.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -8886,6 +8878,31 @@ strapi-helper-plugin@3.1.3:
     styled-components "^5.0.0"
     whatwg-fetch "^2.0.3"
 
+strapi-helper-plugin@3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/strapi-helper-plugin/-/strapi-helper-plugin-3.1.4.tgz#0408f37272f7b40cc16428912e2004106086c6fb"
+  integrity sha512-qjV+v8JUvhFFUErAEAAmrPXjY+/a9YvShMxNZFzpGjT/pK8He6ceUuFK0ck16rBjZCUtoyW2iDhiZcNaAsgcVg==
+  dependencies:
+    "@buffetjs/core" "3.2.1"
+    "@buffetjs/hooks" "3.2.1"
+    "@buffetjs/icons" "3.2.1"
+    "@buffetjs/styles" "3.2.1"
+    "@buffetjs/utils" "3.2.1"
+    bootstrap "^4.3.1"
+    classnames "^2.2.5"
+    immutable "^3.8.2"
+    invariant "^2.2.1"
+    lodash "4.17.19"
+    moment "^2.16.0"
+    react "^16.9.0"
+    react-dom "^16.9.0"
+    react-intl "4.5.0"
+    react-router "^5.0.0"
+    react-router-dom "^5.0.0"
+    reactstrap "8.4.1"
+    styled-components "^5.0.0"
+    whatwg-fetch "^3.3.1"
+
 strapi-plugin-content-manager@3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.1.3.tgz#962d833c11ee9a38c743217bb24b352e91f09e92"
@@ -9014,20 +9031,19 @@ strapi-plugin-upload@3.1.3:
     stream-to-array "^2.3.0"
     uuid "^3.2.1"
 
-strapi-plugin-users-permissions@3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.1.3.tgz#437e3bf79129ff2f1db1f2438b7cbf9fcd3422f8"
-  integrity sha512-l9ABb1UihWYS5XTClWybi3XbNtpu4HPE1zu5xXKLkhG9iILaMAgHmFJoiSujORIPErODNlzJ9HrLH5oteoQc8w==
+"strapi-plugin-users-permissions@git+https://dbatarin:SsGukesJrws8NHimj4sg@git.computools.org/pickbazar/strapi-plugin-users-permissions.git":
+  version "3.1.4"
+  resolved "git+https://dbatarin:SsGukesJrws8NHimj4sg@git.computools.org/pickbazar/strapi-plugin-users-permissions.git#119aabd8a94e21b00ba228be938af19137481cae"
   dependencies:
     "@purest/providers" "^1.0.1"
     bcryptjs "^2.4.3"
-    grant-koa "^5.0.1"
+    grant "git+https://dbatarin:SsGukesJrws8NHimj4sg@git.computools.org/pickbazar/grant.git"
     immutable "^3.8.2"
     jsonwebtoken "^8.1.0"
     koa2-ratelimit "^0.9.0"
     lodash "4.17.19"
     purest "3.1.0"
-    react "^16.9.0"
+    react "^16.13.1"
     react-dom "^16.9.0"
     react-intl "4.5.0"
     react-redux "^7.0.2"
@@ -9036,8 +9052,8 @@ strapi-plugin-users-permissions@3.1.3:
     reactstrap "8.4.1"
     redux-saga "^0.16.0"
     request "^2.83.0"
-    strapi-helper-plugin "3.1.3"
-    strapi-utils "3.1.3"
+    strapi-helper-plugin "3.1.4"
+    strapi-utils "3.1.4"
     uuid "^3.1.0"
 
 strapi-provider-email-sendmail@3.1.3:
@@ -9057,6 +9073,18 @@ strapi-utils@3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/strapi-utils/-/strapi-utils-3.1.3.tgz#a632f84756e54e0aaa2dadebc69959fa2748a9af"
   integrity sha512-juD4/tYTrSfoelXGzR6ZaNYiDak6SGfP0EJQ01Z+SzZ1i9HBhb/SGqNgkdEY1TFqrWt1+flOPDUlVIxSKHnf6Q==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "^2.8.1"
+    lodash "4.17.19"
+    pino "^4.7.1"
+    pluralize "^8.0.0"
+    yup "0.28.1"
+
+strapi-utils@3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/strapi-utils/-/strapi-utils-3.1.4.tgz#77a5d03ef9de8da5653f3e9275d24e8a062a6266"
+  integrity sha512-BcRW6xcwW0glisgJ3VR+XkakV9Bza5JLY9+ndgo/yjmCthjLobUO/Dc/9T35eCkyReXYweCquW/HoPkOMbdm9g==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "^2.8.1"
@@ -10031,7 +10059,7 @@ websocket-extensions@>=0.1.1:
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^3.3.1:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.4.0.tgz#e11de14f4878f773fbebcde8871b2c0699af8b30"
   integrity sha512-rsum2ulz2iuZH08mJkT0Yi6JnKhwdw4oeyMjokgxd+mmqYSd9cPpOQf01TIWgjxG/U4+QR+AwKq6lSbXVxkyoQ==
