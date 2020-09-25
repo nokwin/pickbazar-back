@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discounts",
+  "info": {
+    "name": "Discounts"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "amount": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 100
+    },
+    "products": {
+      "collection": "products",
+      "via": "discount"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

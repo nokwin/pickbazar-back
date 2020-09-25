@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/categories": {
+    "/products": {
       "get": {
         "deprecated": false,
-        "description": "Find all the categories's records",
+        "description": "Find all the products's records",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve products document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Categories"
+                    "$ref": "#/components/schemas/Products"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Products"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new categories record",
+        "description": "Create a new products record",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve products document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Categories"
+                  "$ref": "#/components/schemas/Products"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Products"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategories"
+                "$ref": "#/components/schemas/NewProducts"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/products/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of categories documents",
+        "description": "Retrieve the numver of products documents",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve products document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Products"
         ],
         "parameters": []
       }
     },
-    "/categories/{id}": {
+    "/products/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one categories record",
+        "description": "Find one products record",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve products document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Categories"
+                  "$ref": "#/components/schemas/Products"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Products"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single categories record",
+        "description": "Update a single products record",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve products document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Categories"
+                  "$ref": "#/components/schemas/Products"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Products"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategories"
+                "$ref": "#/components/schemas/NewProducts"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single categories record",
+        "description": "Delete a single products record",
         "responses": {
           "200": {
-            "description": "deletes a single categories based on the ID supplied",
+            "description": "deletes a single products based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Products"
         ],
         "parameters": [
           {
@@ -514,19 +514,103 @@
   },
   "components": {
     "schemas": {
-      "Categories": {
+      "Products": {
         "required": [
           "id",
-          "title"
+          "name",
+          "size",
+          "price",
+          "description",
+          "photos"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "parentCategory": {
+          "size": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "default": 0
+          },
+          "description": {
+            "type": "string"
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "category": {
             "required": [
               "id",
               "title"
@@ -555,51 +639,37 @@
               }
             }
           },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "size",
-                "price",
-                "description",
-                "photos"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "photos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "category": {
-                  "type": "string"
-                },
-                "discount": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "discount": {
+            "required": [
+              "id",
+              "amount",
+              "title",
+              "isEnabled"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer"
+              },
+              "products": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "title": {
+                "type": "string"
+              },
+              "isEnabled": {
+                "type": "boolean"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -693,22 +763,32 @@
           }
         }
       },
-      "NewCategories": {
+      "NewProducts": {
         "required": [
-          "title"
+          "name",
+          "size",
+          "price",
+          "description"
         ],
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "parentCategory": {
+          "size": {
             "type": "string"
           },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "price": {
+            "type": "number",
+            "default": 0
+          },
+          "description": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -722,7 +802,7 @@
   },
   "tags": [
     {
-      "name": "Categories"
+      "name": "Products"
     }
   ]
 }

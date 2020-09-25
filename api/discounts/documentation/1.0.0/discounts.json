@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/categories": {
+    "/discounts": {
       "get": {
         "deprecated": false,
-        "description": "Find all the categories's records",
+        "description": "Find all the discounts's records",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve discounts document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Categories"
+                    "$ref": "#/components/schemas/Discounts"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Discounts"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new categories record",
+        "description": "Create a new discounts record",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve discounts document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Categories"
+                  "$ref": "#/components/schemas/Discounts"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Discounts"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategories"
+                "$ref": "#/components/schemas/NewDiscounts"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/discounts/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of categories documents",
+        "description": "Retrieve the numver of discounts documents",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve discounts document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Discounts"
         ],
         "parameters": []
       }
     },
-    "/categories/{id}": {
+    "/discounts/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one categories record",
+        "description": "Find one discounts record",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve discounts document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Categories"
+                  "$ref": "#/components/schemas/Discounts"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Discounts"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single categories record",
+        "description": "Update a single discounts record",
         "responses": {
           "200": {
-            "description": "Retrieve categories document(s)",
+            "description": "Retrieve discounts document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Categories"
+                  "$ref": "#/components/schemas/Discounts"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Discounts"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategories"
+                "$ref": "#/components/schemas/NewDiscounts"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single categories record",
+        "description": "Delete a single discounts record",
         "responses": {
           "200": {
-            "description": "deletes a single categories based on the ID supplied",
+            "description": "deletes a single discounts based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Categories"
+          "Discounts"
         ],
         "parameters": [
           {
@@ -514,46 +514,19 @@
   },
   "components": {
     "schemas": {
-      "Categories": {
+      "Discounts": {
         "required": [
           "id",
-          "title"
+          "amount",
+          "title",
+          "isEnabled"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
-          "parentCategory": {
-            "required": [
-              "id",
-              "title"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "parentCategory": {
-                "type": "string"
-              },
-              "products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "amount": {
+            "type": "integer"
           },
           "products": {
             "type": "array",
@@ -603,6 +576,13 @@
               }
             }
           },
+          "title": {
+            "type": "string"
+          },
+          "isEnabled": {
+            "type": "boolean",
+            "default": false
+          },
           "created_by": {
             "required": [
               "id",
@@ -693,22 +673,28 @@
           }
         }
       },
-      "NewCategories": {
+      "NewDiscounts": {
         "required": [
-          "title"
+          "amount",
+          "title",
+          "isEnabled"
         ],
         "properties": {
-          "title": {
-            "type": "string"
-          },
-          "parentCategory": {
-            "type": "string"
+          "amount": {
+            "type": "integer"
           },
           "products": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "title": {
+            "type": "string"
+          },
+          "isEnabled": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"
@@ -722,7 +708,7 @@
   },
   "tags": [
     {
-      "name": "Categories"
+      "name": "Discounts"
     }
   ]
 }

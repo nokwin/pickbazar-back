@@ -15,6 +15,10 @@
     },
     "parentCategory": {
       "model": "categories"
+    },
+    "products": {
+      "via": "category",
+      "collection": "products"
     }
   }
 }

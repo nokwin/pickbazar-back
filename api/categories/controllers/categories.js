@@ -38,5 +38,6 @@ const cleanCategory = category => ({
   created_by: undefined,
   updated_by: undefined,
   created_at: undefined,
-  updated_at: undefined
+  updated_at: undefined,
+  products: undefined
 })

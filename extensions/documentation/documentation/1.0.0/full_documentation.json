@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/25/2020 4:26:51 PM"
+    "x-generation-date": "09/25/2020 5:02:21 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4217,11 +4217,65 @@
               "parentCategory": {
                 "type": "string"
               },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "size",
+                "price",
+                "description",
+                "photos"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "photos": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "category": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -4325,6 +4379,12 @@
           },
           "parentCategory": {
             "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
@@ -4491,41 +4551,50 @@
             "type": "integer"
           },
           "products": {
-            "required": [
-              "id",
-              "name",
-              "size",
-              "price",
-              "description",
-              "photos"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "size": {
-                "type": "string"
-              },
-              "price": {
-                "type": "number"
-              },
-              "description": {
-                "type": "string"
-              },
-              "photos": {
-                "type": "array",
-                "items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "size",
+                "price",
+                "description",
+                "photos"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "photos": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "category": {
+                  "type": "string"
+                },
+                "discount": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           },
@@ -4637,7 +4706,10 @@
             "type": "integer"
           },
           "products": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "title": {
             "type": "string"
@@ -4750,6 +4822,69 @@
               }
             }
           },
+          "category": {
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "parentCategory": {
+                "type": "string"
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "discount": {
+            "required": [
+              "id",
+              "amount",
+              "title",
+              "isEnabled"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer"
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "title": {
+                "type": "string"
+              },
+              "isEnabled": {
+                "type": "boolean"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -4859,6 +4994,12 @@
             "default": 0
           },
           "description": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "discount": {
             "type": "string"
           },
           "created_by": {
