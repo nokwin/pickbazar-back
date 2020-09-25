@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coupons",
+  "info": {
+    "name": "Coupons"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "private": false,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "private": false,
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "gradientColors": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
