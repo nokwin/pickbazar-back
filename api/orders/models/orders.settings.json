@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Orders"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "when": {
+      "type": "string",
+      "required": true
+    },
+    "products": {
+      "collection": "products"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": false
+    },
+    "buyer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
