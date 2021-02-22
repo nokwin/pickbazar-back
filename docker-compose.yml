@@ -1,0 +1,12 @@
+version: "3.0"
+
+services:
+  strapi:
+    image: strapi/strapi:3.0.0-beta.18.7
+    env_file:
+      - .env.production
+    ports:
+      - 1338:1338
+    volumes:
+      - ./:/srv/app
+    command: strapi start
