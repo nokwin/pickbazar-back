@@ -6,7 +6,7 @@ services:
     env_file:
       - .env.production
     ports:
-      - 1338:1338
+      - 1338:1337
     volumes:
       - ./:/srv/app
     command: strapi start
